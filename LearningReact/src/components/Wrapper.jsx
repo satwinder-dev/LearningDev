@@ -8,6 +8,7 @@ const Wrapper = ({children,color='green'}) => {
             color:color,
             fontWeight:100,
             padding:10,
+            margin:20
         }}>{children}</h1>
     </div>
   )
