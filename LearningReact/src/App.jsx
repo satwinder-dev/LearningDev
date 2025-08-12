@@ -19,7 +19,7 @@ function App() {
   // "https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2018/4/10/1/HBFB1406_180126_dog-on-rug_041.jpg.rend.hgtvcom.616.822.suffix/1523383802334.jpeg";
 
   const [count, setCount] = useState(0);
-  const [subject , setSubject] =useState("") 
+  const [subject, setSubject] = useState("");
   // const [data, setData] = useState(0)
 
   const userData = [
@@ -109,18 +109,29 @@ function App() {
         <UseRef />
       </div>
 
-      <div className="p-4 ">
+      <div className="p-4 bg-red-50">
         <SubjectContext.Provider value={subject}>
-          <select value={subject} onChange={(event)=>setSubject(event.target.value)} className="border py-1 px-2 mb-4">
+          <select
+            value={subject}
+            onChange={(event) => setSubject(event.target.value)}
+            className="border py-1 px-2 mb-4"
+          >
             <option value={""}>Select</option>
             <option value={"Maths"}>Maths</option>
             <option value={"English"}>English</option>
             <option value={"Science"}>Science</option>
             <option value={"Physics"}>Physics</option>
           </select>
-          <button  className="border py-1 px-3 mx-2 cursor-pointer" onClick={()=>setSubject('')}>Clear</button>
-          <p className="text-2xl">USE Context Hook</p>
+          <button
+            className="border py-1 px-3 mx-2 cursor-pointer"
+            onClick={() => setSubject("")}
+          >
+            Clear
+          </button>
+          <div className="p-4 m-4 bg-red-100">
+            <p className="text-2xl">USE Context Hook</p>
           <ContextApi />
+          </div>
         </SubjectContext.Provider>
       </div>
     </div>

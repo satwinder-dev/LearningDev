@@ -68,7 +68,7 @@ const ConditionalStyling = () => {
   const [theme, setTheme] = useState(false);
 
   return (
-    <div className="min-h-screen p-5">
+    <div className={`${theme ? "bg-black/60" : "bg-white"} min-h-screen p-5`}>
       <h1 className="text-3xl my-5">Dynamic and Conditional Inline Style</h1>
       <button
         className="border py-1 px-3 cursor-pointer"
@@ -87,9 +87,7 @@ const ConditionalStyling = () => {
         Layout
       </button>
       <div
-        className={
-          grid ? "flex flex-wrap gap-10 my-5" : "grid flex-wrap gap-10 my-5"
-        }
+        className={`${grid ? "flex flex-wrap gap-10 my-5" : "grid flex-wrap gap-10 my-5"}`}
       >
         {items.map((e) => (
           <div
