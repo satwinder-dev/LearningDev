@@ -1,14 +1,43 @@
-import './App.css'
-import NavBar from './components/NavBar'
+import { Route, Routes } from "react-router";
+import "./App.css";
+import Home from "./components/Home";
+import NavBar from "./components/NavBar";
+import About from "./components/About";
+import Project from "./components/Project";
+import Contact from "./components/Contact";
+import AppOne from "./components/AppOne";
+import AppTwo from "./components/AppTwo";
+import AppThree from "./components/AppThree";
+import AppFour from "./components/AppFour";
+import Users from "./components/Users";
+import UserDetails from "./components/UserDetails";
+import Products from "./components/Products";
+import Profile from "./components/Profile";
 
 function App() {
- 
-
   return (
     <>
-      <NavBar/>
+      <NavBar />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/products" element={<Products />} />
+
+        <Route path="/project" element={<Project />}>
+          <Route path="appone" element={<AppOne />} />
+          <Route path="apptwo" element={<AppTwo />} />
+          <Route path="appthree" element={<AppThree />} />
+          <Route path="appfour" element={<AppFour />} />
+        </Route>
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/user" element={<Users />}>
+          <Route path=":color" element={<UserDetails />} />
+        </Route>
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

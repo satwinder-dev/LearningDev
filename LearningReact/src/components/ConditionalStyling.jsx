@@ -87,7 +87,9 @@ const ConditionalStyling = () => {
         Layout
       </button>
       <div
-        className={`${grid ? "flex flex-wrap gap-10 my-5" : "grid flex-wrap gap-10 my-5"}`}
+        className={`${
+          grid ? "flex flex-wrap gap-10 my-5" : "grid flex-wrap gap-10 my-5"
+        }`}
       >
         {items.map((e) => (
           <div
@@ -95,12 +97,12 @@ const ConditionalStyling = () => {
             className={`
               ${
                 theme ? "text-black bg-gray-300" : "bg-black/80 text-white"
-              } rounded-2xl  p-3 flex flex-col gap-2 w-fit`}
+              } rounded-2xl  p-5 flex flex-col gap-2 w-fit`}
           >
             <img
               src={e.src}
               alt=""
-              className="w-58 h-58 object-cover rounded-lg"
+              className="w-68 h-68 object-cover rounded-lg"
             />
             <h1 className="text-2xl">{e.heading}</h1>
           </div>

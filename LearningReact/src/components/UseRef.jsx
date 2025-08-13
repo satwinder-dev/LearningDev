@@ -14,15 +14,15 @@ const UseRef = () => {
         <h1 className="text-3xl">UseRef</h1>
         <div className="my-4 flex gap-2">
           <button
-            className="border py-1 px-3 cursor-pointer"
+            className="border py-1 px-3 cursor-pointer !m-0"
             onClick={() => setCount(count + 1)}
           >
             Number {count}
           </button>
-          <button className="border py-1 px-3 cursor-pointer" onClick={handle}>
+          <button className="border py-1 px-3 cursor-pointer !m-0" onClick={handle}>
             Square
           </button>
-          <input ref={inputRef} type="text" className="border p-1" />
+          <input ref={inputRef} type="text" className="border px-4 rounded-4xl" />
         </div>
        
       </div>

@@ -12,6 +12,7 @@ import ConditionalStyling from "./components/ConditionalStyling";
 import UseRef from "./components/UseRef";
 import { ContextApi } from "./components/ContextApi/ContextApi";
 import { SubjectContext } from "./components/ContextApi/ContextData";
+import { Link, Navigate, Route, Routes } from "react-router";
 
 function App() {
   //   const name = "peter";
@@ -42,10 +43,35 @@ function App() {
 
   return (
     <div>
+      <div className="min-h-screen p-4">
+        <h1 className="text-2xl pb-4">React Router</h1>
+
+        <div className="flex gap-4 rounded-full bg-red-200 p-2 w-fit">
+          <Link className="focus:bg-white rounded-full py-2 px-4" to="/conditionalstyling">Conditional Styling</Link>
+          <Link className="focus:bg-white rounded-full py-2 px-4" to="/useref">Use Ref</Link>
+          <Link className="focus:bg-white rounded-full py-2 px-4" to="/clock">Clock</Link>
+        </div>
+        
+      <div className="py-4 border mt-5 rounded-2xl px-4">
+          <Routes>
+            <Route
+              element={<ConditionalStyling />}
+              path="/conditionalstyling"
+              />
+            <Route element={<UseRef />} path="/useref" />
+            <Route element={<ContextApi />} path="/contextapi" />
+            <Route element={<Clock />} path="/clock" />
+            <Route element={<img className="" src="https://colorlib.com/wp/wp-content/uploads/sites/2/404-error-template-3.png"/> } path="/*" />
+
+            {/* Redirectoin */}
+            {/* <Route element={<Navigate to='/clock'/>} path="/*"/> */}
+          </Routes>
+        </div>
       {/* <input type="text" value={name} id={name} />
       <br />
       <img src={path} /> */}
 
+      </div>
       <div>
         <h3>React js click event and function call</h3>
         <Onclick />
@@ -102,13 +128,6 @@ function App() {
         <button onClick={() => setCount(count + 1)}>Counter</button>
         {/* <button onClick={()=>setData(data+1)}>Counter</button> */}
       </div>
-      <div className="my-4">
-        <ConditionalStyling />
-      </div>
-      <div className="p-4">
-        <UseRef />
-      </div>
-
       <div className="p-4 bg-red-50">
         <SubjectContext.Provider value={subject}>
           <select
@@ -130,10 +149,12 @@ function App() {
           </button>
           <div className="p-4 m-4 bg-red-100">
             <p className="text-2xl">USE Context Hook</p>
-          <ContextApi />
+            <ContextApi />
           </div>
         </SubjectContext.Provider>
       </div>
+
+      
     </div>
   );
 }
