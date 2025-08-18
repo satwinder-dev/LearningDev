@@ -60,6 +60,12 @@ const NavBar = () => {
                 >
                   People
                 </NavLink>
+                <NavLink
+                  className="hover:opacity-80 transition-all ease-in-out duration-200 "
+                  to={"customapi"}
+                >
+                  Custom API
+                </NavLink>
               </div>
             </div>
           ) : null}

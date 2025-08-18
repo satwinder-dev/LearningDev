@@ -18,7 +18,7 @@ export default function Profile() {
     
   return (
    <div
-      className={`max-w-[1400px] mx-auto flex flex-col py-20`}
+      className={`max-w-[1400px] mx-auto flex flex-col py-20 px-4`}
     >
         <p className='text-2xl'>
       Profile

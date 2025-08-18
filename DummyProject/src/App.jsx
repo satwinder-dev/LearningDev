@@ -14,6 +14,8 @@ import UserDetails from "./components/UserDetails";
 import Products from "./components/Products";
 import Profile from "./components/Profile";
 import Peoples from "./components/Peoples";
+import CustopApi from "./components/CustopApi";
+import EditUser from "./components/EditUser";
 
 function App() {
   return (
@@ -34,6 +36,10 @@ function App() {
         </Route>
         <Route path="/contact" element={<Contact />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/customapi" element={<CustopApi />}>
+          <Route path=":id" element={<EditUser />} />
+        </Route>
+
         <Route path="/user" element={<Users />}>
           <Route path=":color" element={<UserDetails />} />
         </Route>

@@ -21,7 +21,7 @@ export default function Products() {
   }
 
   return (
-    <div className="max-w-[1400px] mx-auto flex flex-col py-20">
+    <div className="max-w-[1400px] mx-auto flex flex-col py-20 px-4">
       <h1 className="text-3xl">Products</h1>
 
       <div className="grid grid-cols-4 my-4 gap-5 bg-red-300 p-5 rounded-3xl">

@@ -1,11 +1,32 @@
 {
-  "posts": [{ "id": 1, "title": "json-server", "author": "typicode" }],
-  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
   "profile": [
-    { "id": 1, "name": "Satwinder" ,"age": 20, "tech":"React"},
-    { "id": 2, "name": "John" ,"age": 29, "tech":"React"},
-    { "id": 3, "name": "Petter" ,"age": 33, "tech":"React"},
-    { "id": 4, "name": "alexa" ,"age": 26, "tech":"React"},
-    { "id": 5, "name": "dani" ,"age": 30, "tech":"React"}
+    {
+      "name": "dasdasd",
+      "city": "ghikgiu",
+      "age": "5",
+      "tech": "gdfgr",
+      "id": "e538"
+    },
+    {
+      "name": "Satwinder Singh",
+      "city": "patiala",
+      "age": "28",
+      "tech": "react n",
+      "id": "3600"
+    },
+    {
+      "name": "Satwinder Singh",
+      "city": "patiala",
+      "age": "23",
+      "tech": "react n",
+      "id": "4039"
+    },
+    {
+      "name": "Satwinder Singh",
+      "city": "patiala",
+      "age": "23",
+      "tech": "react n",
+      "id": "cf07"
+    }
   ]
 }

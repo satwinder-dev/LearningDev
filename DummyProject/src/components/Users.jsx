@@ -27,7 +27,7 @@ export default function Users() {
 
   return (
     <>
-      <div className="max-w-[1400px] mx-auto flex flex-col py-20">
+      <div className="max-w-[1400px] mx-auto flex flex-col py-20 px-4">
         <h1 className="text-2xl">USers</h1>
         <div className="flex my-3 gap-5">
           {users.map((items) => (

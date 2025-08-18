@@ -4,94 +4,219 @@ import styled from 'styled-components';
 const Loader = () => {
   return (
     <StyledWrapper>
-      <div className="loader">
-        <svg className="svg-wrap" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg" version="1.1">
-          <circle strokeLinecap="round" strokeWidth={2} className="svg-stroke" cy={25} cx={50} r={15} />
-          <circle className="circle circle-one" cy={25} cx={35} r={1} />
-          <circle className="circle circle-two" cy={25} cx={45} r={1} />
-          <circle className="circle circle-three" cy={25} cx={55} r={1} />
-        </svg>  
-      </div>
+      <svg className="pl" width={240} height={240} viewBox="0 0 240 240">
+        <circle className="pl__ring pl__ring--a" cx={120} cy={120} r={105} fill="none" stroke="#000" strokeWidth={20} strokeDasharray="0 660" strokeDashoffset={-330} strokeLinecap="round" />
+        <circle className="pl__ring pl__ring--b" cx={120} cy={120} r={35} fill="none" stroke="#000" strokeWidth={20} strokeDasharray="0 220" strokeDashoffset={-110} strokeLinecap="round" />
+        <circle className="pl__ring pl__ring--c" cx={85} cy={120} r={70} fill="none" stroke="#000" strokeWidth={20} strokeDasharray="0 440" strokeLinecap="round" />
+        <circle className="pl__ring pl__ring--d" cx={155} cy={120} r={70} fill="none" stroke="#000" strokeWidth={20} strokeDasharray="0 440" strokeLinecap="round" />
+      </svg>
     </StyledWrapper>
   );
 }
 
 const StyledWrapper = styled.div`
-  .loader {
-    width: 500px;
-    height: 250px;
+  .pl {
+    width: 6em;
+    height: 6em;
   }
 
-  .circle {
-    fill: #fff;
+  .pl__ring {
+    animation: ringA 2s linear infinite;
   }
 
-  .circle-one {
-    opacity: 0;
+  .pl__ring--a {
+    stroke: #f42f25;
   }
 
-  .svg-stroke {
-    fill: transparent;
-    stroke-dasharray: 46.82, 93.64;
-    stroke-dashoffset: 46.82;
-    stroke: #fff;
-    opacity: 1;
+  .pl__ring--b {
+    animation-name: ringB;
+    stroke: #f49725;
   }
 
-  .svg-wrap .svg-stroke {
-    animation: stroke-start 1.6s linear, stroke-end 1.6s 0.8s linear infinite;
+  .pl__ring--c {
+    animation-name: ringC;
+    stroke: #255ff4;
   }
 
-  .svg-wrap .circle-one {
-    animation: dot-one 0s 0.8s, move-dot 1.6s 0.8s linear infinite;
+  .pl__ring--d {
+    animation-name: ringD;
+    stroke: #f42582;
   }
 
-  .svg-wrap .circle-two,
-  .svg-wrap .circle-three {
-    animation: move-dot 1.6s 0.8s linear infinite;
+  /* Animations */
+  @keyframes ringA {
+    from, 4% {
+      stroke-dasharray: 0 660;
+      stroke-width: 20;
+      stroke-dashoffset: -330;
+    }
+
+    12% {
+      stroke-dasharray: 60 600;
+      stroke-width: 30;
+      stroke-dashoffset: -335;
+    }
+
+    32% {
+      stroke-dasharray: 60 600;
+      stroke-width: 30;
+      stroke-dashoffset: -595;
+    }
+
+    40%, 54% {
+      stroke-dasharray: 0 660;
+      stroke-width: 20;
+      stroke-dashoffset: -660;
+    }
+
+    62% {
+      stroke-dasharray: 60 600;
+      stroke-width: 30;
+      stroke-dashoffset: -665;
+    }
+
+    82% {
+      stroke-dasharray: 60 600;
+      stroke-width: 30;
+      stroke-dashoffset: -925;
+    }
+
+    90%, to {
+      stroke-dasharray: 0 660;
+      stroke-width: 20;
+      stroke-dashoffset: -990;
+    }
   }
 
-  @keyframes dot-one {
+  @keyframes ringB {
+    from, 12% {
+      stroke-dasharray: 0 220;
+      stroke-width: 20;
+      stroke-dashoffset: -110;
+    }
+
+    20% {
+      stroke-dasharray: 20 200;
+      stroke-width: 30;
+      stroke-dashoffset: -115;
+    }
+
+    40% {
+      stroke-dasharray: 20 200;
+      stroke-width: 30;
+      stroke-dashoffset: -195;
+    }
+
+    48%, 62% {
+      stroke-dasharray: 0 220;
+      stroke-width: 20;
+      stroke-dashoffset: -220;
+    }
+
+    70% {
+      stroke-dasharray: 20 200;
+      stroke-width: 30;
+      stroke-dashoffset: -225;
+    }
+
+    90% {
+      stroke-dasharray: 20 200;
+      stroke-width: 30;
+      stroke-dashoffset: -305;
+    }
+
+    98%, to {
+      stroke-dasharray: 0 220;
+      stroke-width: 20;
+      stroke-dashoffset: -330;
+    }
+  }
+
+  @keyframes ringC {
     from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes stroke-start {
-    50% {
-      stroke-dashoffset: 46.82;
-    }
-
-    100% {
+      stroke-dasharray: 0 440;
+      stroke-width: 20;
       stroke-dashoffset: 0;
     }
+
+    8% {
+      stroke-dasharray: 40 400;
+      stroke-width: 30;
+      stroke-dashoffset: -5;
+    }
+
+    28% {
+      stroke-dasharray: 40 400;
+      stroke-width: 30;
+      stroke-dashoffset: -175;
+    }
+
+    36%, 58% {
+      stroke-dasharray: 0 440;
+      stroke-width: 20;
+      stroke-dashoffset: -220;
+    }
+
+    66% {
+      stroke-dasharray: 40 400;
+      stroke-width: 30;
+      stroke-dashoffset: -225;
+    }
+
+    86% {
+      stroke-dasharray: 40 400;
+      stroke-width: 30;
+      stroke-dashoffset: -395;
+    }
+
+    94%, to {
+      stroke-dasharray: 0 440;
+      stroke-width: 20;
+      stroke-dashoffset: -440;
+    }
   }
 
-  @keyframes stroke-end {
-    50% {
-      stroke-dasharray: 46.82, 93.64;
+  @keyframes ringD {
+    from, 8% {
+      stroke-dasharray: 0 440;
+      stroke-width: 20;
       stroke-dashoffset: 0;
-      transform: translateX(0);
     }
 
-    100% {
-      stroke-dasharray: 0, 93.64;
-      stroke-dashoffset: -46.82;
-      transform: translateX(10px);
-    }
-  }
-
-  @keyframes move-dot {
-    50% {
-      transform: translateX(0);
+    16% {
+      stroke-dasharray: 40 400;
+      stroke-width: 30;
+      stroke-dashoffset: -5;
     }
 
-    100% {
-      transform: translateX(10px);
+    36% {
+      stroke-dasharray: 40 400;
+      stroke-width: 30;
+      stroke-dashoffset: -175;
+    }
+
+    44%, 50% {
+      stroke-dasharray: 0 440;
+      stroke-width: 20;
+      stroke-dashoffset: -220;
+    }
+
+    58% {
+      stroke-dasharray: 40 400;
+      stroke-width: 30;
+      stroke-dashoffset: -225;
+    }
+
+    78% {
+      stroke-dasharray: 40 400;
+      stroke-width: 30;
+      stroke-dashoffset: -395;
+    }
+
+    86%, to {
+      stroke-dasharray: 0 440;
+      stroke-width: 20;
+      stroke-dashoffset: -440;
     }
   }`;
 
