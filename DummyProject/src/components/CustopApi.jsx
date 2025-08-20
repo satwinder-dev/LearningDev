@@ -49,10 +49,13 @@ export default function CustopApi() {
 
   const editUser = (id) => {
     navigate(id);
-  }
+  };
   return (
     <div className="max-w-[1400px] mx-auto flex flex-col py-20 px-4">
-      <h1 className="text-2xl">Custom API</h1>
+      <div className="flex gap-3 mt-5 items-center">
+        <h1 className="text-2xl min-w-52">Custom API</h1>
+       
+      </div>
       <div className="flex gap-3 mt-5">
         <div className="min-w-52 bg-gray-300 p-3">ID</div>
         <div className="min-w-52 bg-gray-300 p-3">Name</div>
@@ -133,7 +136,7 @@ export default function CustopApi() {
         </div>
       )}
 
-      <div className="flex gap-20">
+      <div className="flex gap-20 mt-5">
         <div className="mt-5">
           {/* <AddUser /> */}
           <div>
@@ -150,6 +153,7 @@ export default function CustopApi() {
                   type="text"
                   name="name"
                   id="name"
+                  value={name}
                 />
               </div>
               <div className="flex gap-3 mt-5">
@@ -159,9 +163,10 @@ export default function CustopApi() {
                 <input
                   className="border px-2 py-1"
                   onChange={(event) => setAge(event.target.value)}
-                  type="text"
+                  type="number"
                   name="age"
                   id="age"
+                  value={age}
                 />
               </div>
               <div className="flex gap-3 mt-5">
@@ -174,6 +179,7 @@ export default function CustopApi() {
                   type="text"
                   name="city"
                   id="city"
+                  value={city}
                 />
               </div>
               <div className="flex gap-3 mt-5">
@@ -186,6 +192,7 @@ export default function CustopApi() {
                   type="text"
                   name="tech"
                   id="tech"
+                  value={tech}
                 />
               </div>
               <div>
@@ -199,8 +206,8 @@ export default function CustopApi() {
             </div>
           </div>
         </div>
+        {/* Edit User */}
         <div className="mt-5">
-          {/* <AddUser /> */}
           <div>
             <Outlet />
           </div>

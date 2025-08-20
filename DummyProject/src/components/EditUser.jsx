@@ -24,7 +24,6 @@ export default function EditUser() {
     getUserData()
   },[])
   
-  
 
   const updateUser = async () =>{
     console.log(name,age,city,tech)
@@ -34,14 +33,14 @@ export default function EditUser() {
     })
     await res.json()
     // console.log(res)
-    navigate('/customapi')
+    navigate('/customapi/')
     alert('data Updated')
     getUserData()
   }
   return (
     <>
       <div>
-        <h1 className="text-3xl mb-4">Edit User</h1>
+        <h1 className="text-2xl mb-4">Edit User</h1>
 
         <div className="my-5">
           <div className="flex gap-3 mt-5">

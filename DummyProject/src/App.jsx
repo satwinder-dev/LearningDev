@@ -34,8 +34,10 @@ function App() {
           <Route path="appthree" element={<AppThree />} />
           <Route path="appfour" element={<AppFour />} />
         </Route>
+
         <Route path="/contact" element={<Contact />} />
         <Route path="/profile" element={<Profile />} />
+        
         <Route path="/customapi" element={<CustopApi />}>
           <Route path=":id" element={<EditUser />} />
         </Route>
