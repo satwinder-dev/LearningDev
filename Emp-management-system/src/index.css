@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+
+
 /* width */
 ::-webkit-scrollbar {
   width: 2px;

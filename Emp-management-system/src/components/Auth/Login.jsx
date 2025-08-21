@@ -8,8 +8,8 @@ export default function Login({handleLogin}) {
   const submithandler = (e) => {
     e.preventDefault();
     handleLogin(email,password)
-    console.log("form submitted");
-    console.log(email, password);
+    // console.log("form submitted");
+    // console.log(email, password);
     setEmail("");
     setPassword("");
   };

@@ -2,11 +2,11 @@ import React from "react";
 import Header from "../other/Header";
 import CreatTask from "../other/CreatTask";
 
-export default function AdminDashboard() {
+export default function AdminDashboard(props) {
   return (
     <div>
       <div>
-        <Header />
+        <Header changeUser = {props.changeUser}/>
       </div>
       <CreatTask/>
     </div>

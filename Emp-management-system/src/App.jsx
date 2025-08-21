@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Login from "./components/Auth/Login";
 import EmployeeDashboard from "./components/Dashboard/EmployeeDashboard";
 import AdminDashboard from "./components/Dashboard/AdminDashboard";
@@ -8,23 +8,28 @@ import { AuthContext } from "./context/AuthProvider";
 export default function App() {
   const [user, setUser] = useState(null);
   const [loggedInUserData, setLoggedInUserData] = useState(null);
+  const [userData] = useContext(AuthContext);
 
-  // useEffect(()=>{
-  //   setLocalStorage()
-  //   getLocalStorage()
-  // },[])
+  useEffect(()=>{
+    const loggedInUser =localStorage.getItem('loggedInUser')
+    if(loggedInUser){
+      const userData = JSON.parse(loggedInUser)
+      setUser(userData.role)
+      setLoggedInUserData(userData.data)
+    }
+  },[])
 
-  const Authdata = useContext(AuthContext);
 
   const handleLogin = (email, password) => {
-    if (email == "admin@me.com" && password == "123") {
+    if (email == "admin@gmail.com" && password == "123") {
       setUser("admin");
-    } else if (Authdata ) {
-      const employee = Authdata.employees.find((e)=>email == e.email && password == e.password)
+       localStorage.setItem('loggedInUser',JSON.stringify({role:'admin'}))
+    } else if (userData ) {
+      const employee = userData.find((e)=>email == e.email && password == e.password)
       if (employee){
         setUser("employee");
         setLoggedInUserData(employee)
-        localStorage.setItem('loggedinUser',JSON.stringify({role:'employee'}))
+        localStorage.setItem('loggedInUser',JSON.stringify({role:'employee' , data:employee}))
       }
     } else {
       console.log("invalid");
@@ -34,17 +39,13 @@ export default function App() {
   return (
     <div className="bg-black text-white min-h-screen">
       <div className="max-w-[1400px] mx-auto px-4">
-        {/* {!user ? <Login handleLogin={handleLogin} /> : ""} */}
-
         {user == "admin" ? (
-          <AdminDashboard />
+          <AdminDashboard changeUser={setUser} />
         ) : user == "employee" ? (
-          <EmployeeDashboard data = {loggedInUserData} />
+          <EmployeeDashboard data = {loggedInUserData} changeUser={setUser}/>
         ) : (
           <Login handleLogin={handleLogin} />
         )}
-        {/* <EmployeeDashboard/> */}
-        {/* <AdminDashboard/> */}
       </div>
     </div>
   );
