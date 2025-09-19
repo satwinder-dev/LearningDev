@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+
+.navv-menu .active {
+    @apply text-red-600
+}
+
+.project .active {
+    @apply text-red-600 bg-red-200
+}
